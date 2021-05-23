@@ -97,7 +97,7 @@ const Auth: React.FC = () => {
           <button
             disabled={!username || !password}
             type="submit"
-            className="disabled:opacity-40 py-2 text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none"
+            className="disabled:opacity-40 px-4 py-2 text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none"
           >
             {isLogin ? 'Login with JWT' : 'Create new user'}
           </button>

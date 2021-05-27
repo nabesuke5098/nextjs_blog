@@ -89,4 +89,13 @@ describe('BlogPage Test Cases', () => {
     expect(screen.queryByTestId('btn-1')).toBeNull()
     expect(screen.queryByTestId('btn-2')).toBeNull()
   })
+  it('Should render the list of blogs pre-fetched by getStaticProps', async () => {
+    const { page } = await getPage({
+      route: '/',
+    })
+    render(page)
+    expect(await screen.findByText('blog page')).toBeInTheDocument()
+    expect(screen.getByText('title1')).toBeInTheDocument()
+    expect(screen.getByText('title2')).toBeInTheDocument()
+  })
 })

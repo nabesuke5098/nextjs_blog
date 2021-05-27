@@ -69,6 +69,7 @@ describe('BlogPage Test Cases', () => {
     expect(await screen.findByText('blog page')).toBeInTheDocument()
   })
   it('Should render delete btn + logout btn when JWT token cookie exist', async () => {
+    document.cookie = 'access_token=123xyz'
     const { page } = await getPage({
       route: '/',
     })
